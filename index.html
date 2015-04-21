@@ -23,7 +23,7 @@
             <input type="text"
                       ng-model="rotations"
                       ng-change="carrington2date()"
-                      placeholder="Number of Carrington Rotations"
+                      placeholder="Carrington Rotations"
                       min="0"
                       required>
         </div>
@@ -48,6 +48,7 @@
         var SECS = 1000 * 60 * 60 *24;      // TS conversion to days
         var SDATE = "October 14, 1853";     // When CR Began
         var PRECISION = 4;                  // # of decimal places
+
         $scope.rotations = 0;
         $scope.dateString = new Date(SDATE);
 
@@ -55,6 +56,9 @@
             var startDate = new Date(SDATE);
             var days = CRDAYS * $scope.rotations;
             $scope.dateString = new Date(startDate.setUTCDate(startDate.getUTCDate() + days));
+            if($scope.rotations == ""){
+                $scope.dateString  = startDate;
+            }
 
         };
 

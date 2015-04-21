@@ -6,3 +6,4 @@ Do those pesky Carrington Calculations on the fly!
 
 * Bootstrap
 * AngularJs
+* Travis CI
