@@ -34,8 +34,8 @@
                     placeholder="Date String"
                     required>
         </div>
-        <h1>CR: {{rotations}}</h1>
-        <h1>DATE: {{dateString}}</h1>
+        <h1>ROTATIONS: {{rotations}}</h1>
+        <h1>DATE: {{dateString | date: 'MM-dd-yyyy' }}</h1>
     </div>
 </div>
 </body>
@@ -45,22 +45,18 @@
     app.controller('CalcCtrl',['$scope', function($scope) {
         var crDays = 27.2753;
         $scope.rotations = 0;
-        $scope.dateString = '1853/10/14';
+        $scope.dateString = new Date("October 14, 1853");;
+
         $scope.carrington2date = function() {
             var days = crDays * $scope.rotations;
             var startDate = new Date("October 14, 1853");
-            startDate.setUTCDate(startDate.getUTCDate() + days);
-            $scope.dateString = startDate.getUTCFullYear() + "/" + (startDate.getMonth() + 1) + "/" + startDate.getDate();
-            if(!$scope.dateString){ $scope.dateString = '';}
+            $scope.dateString = new Date(startDate.setUTCDate(startDate.getUTCDate() + days));
+
         };
-//        $scope.carrington2date();
-//        $scope.date2carrington();
+
         $scope.date2carrington = function(){
             var startingDate = new Date("October 14, 1853");
-            var year = $scope.dateString.split("/")[0];
-            var month = $scope.dateString.split("/")[1];
-            var day = $scope.dateString.split("/")[2];
-            var date = new Date(year, month - 1, day);
+            var date = $scope.dateString;
             var days = (date.getTime() - startingDate.getTime()) / 1000 / 60 / 60 / 24;
             var crNum = days / crDays;
             $scope.rotations = crNum;
