@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         jshint: {
             all: ['gruntfile.js', 'src/*.js']
         }
-    }),
+    });
 
     // loading tasks the hard way
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -29,7 +29,8 @@ module.exports = function(grunt) {
     grunt.registerTask('build',[
         'jshint',
         'uglify'
-    ]),
+    ]);
+
     grunt.registerTask('travis-ci',['build']);
 
     // default
