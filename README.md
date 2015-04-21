@@ -1,4 +1,4 @@
-![Travis CI][build-logo]
+[![Build Status](https://travis-ci.org/aowongster/aowongster.github.io.svg?branch=master)](https://travis-ci.org/aowongster/aowongster.github.io)
 # Carrington Calculator
 
 Do those pesky Carrington Calculations on the fly!
@@ -7,6 +7,5 @@ Do those pesky Carrington Calculations on the fly!
 
 * Bootstrap
 * AngularJs
+* GruntJs
 * Travis CI
-
-[build-logo]: https://travis-ci.org/aowongster/aowongster.github.io.svg?branch=master

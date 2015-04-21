@@ -13,7 +13,7 @@ app.controller('CalcCtrl',['$scope', function($scope) {
         var startDate = new Date(SDATE);
         var days = CRDAYS * $scope.rotations;
         $scope.dateString = new Date(startDate.setUTCDate(startDate.getUTCDate() + days));
-        if($scope.rotations == ""){
+        if($scope.rotations === ""){
             $scope.dateString  = startDate;
         }
     };
