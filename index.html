@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="carringtonCalc">
+<head lang="en" >
+    <meta charset="UTF-8">
+    <title>Carrington Calc</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div ng-controller="CalcCtrl" class="span12 pagination-centered">
+        <p>Input something in the input box:</p>
+        <p><input type="text"
+                  ng-model="rotations"
+                  ng-change="carrington2date()"
+                  placeholder="Number of Carrington Rotations"
+                  min="0"
+                  required>
+        </p>
+        <p><input type="text" ng-model="dateString" ng-change="date2carrington()" placeholder="Date String" required></p>
+        <h1>CR: {{rotations}}</h1>
+        <h1>DATE: {{dateString}}</h1>
+    </div>
+</div>
+</body>
+
+<script>
+    var app = angular.module('carringtonCalc', []);
+    app.controller('CalcCtrl',['$scope', function($scope) {
+        var crDays = 27.2753;
+        $scope.rotations = 0;
+        $scope.dateString = '1853/10/14';
+
+        $scope.carrington2date = function() {
+            var days = crDays * $scope.rotations;
+            var startDate = new Date("October 14, 1853");
+            startDate.setUTCDate(startDate.getUTCDate() + days);
+            $scope.dateString = startDate.getUTCFullYear() + "/" + (startDate.getMonth() + 1) + "/" + startDate.getDate();
+            if(!$scope.dateString){ $scope.dateString = '';}
+        };
+//        $scope.carrington2date();
+//        $scope.date2carrington();
+
+        $scope.date2carrington = function(){
+            var startingDate = new Date("October 14, 1853");
+            var year = $scope.dateString.split("/")[0];
+            var month = $scope.dateString.split("/")[1];
+            var day = $scope.dateString.split("/")[2];
+            var date = new Date(year, month - 1, day);
+            var days = (date.getTime() - startingDate.getTime()) / 1000 / 60 / 60 / 24;
+            var crNum = days / crDays;
+            $scope.rotations = crNum;
+        };
+    }]);
+</script>
+
+</body>
+</html>
