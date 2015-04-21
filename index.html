@@ -23,7 +23,7 @@
         <div class="form-group">
             <div class="form-group">
                 <label for="numRotations">Carrington Rotations</label>
-                <input    type="number" step=".0001"
+                <input    type="number | number" step=".0001"
                           ng-model="rotations"
                           ng-change="carrington2date()"
                           placeholder="Carrington Rotations"
@@ -38,8 +38,7 @@
                         ng-model="dateString"
                         ng-change="date2carrington()"
                         placeholder="Date String"
-                        min="1853-10-14"
-                        max="76530-12-10"
+
                         class="form-control input-lg"
                         required>
             </div>
