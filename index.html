@@ -23,7 +23,7 @@
         <div class="form-group">
             <div class="form-group">
                 <label for="numRotations">Carrington Rotations</label>
-                <input    type="number"
+                <input    type="number" step=".0001"
                           ng-model="rotations"
                           ng-change="carrington2date()"
                           placeholder="Carrington Rotations"
@@ -38,6 +38,8 @@
                         ng-model="dateString"
                         ng-change="date2carrington()"
                         placeholder="Date String"
+                        min="1853-10-14"
+                        max="76530-12-10"
                         class="form-control input-lg"
                         required>
             </div>
@@ -74,7 +76,7 @@
             var startDate = new Date(SDATE);
             var days = ($scope.dateString.getTime() - startDate.getTime()) / SECS;
             var crNum = days / CRDAYS;
-            $scope.rotations = crNum.toFixed(PRECISION);
+            $scope.rotations = parseFloat(crNum.toFixed(PRECISION));
         };
     }]);
 </script>
