@@ -21,20 +21,26 @@
     <div ng-controller="CalcCtrl" class="col-md-6 col-md-offset-3">
         <h1>Carrington Calculator 2.0</h1>
         <div class="form-group">
-            <input    type="number"
-                      ng-model="rotations"
-                      ng-change="carrington2date()"
-                      placeholder="Carrington Rotations"
-                      min="0"
-                      max="999999"
-                      required>
-        </div>
-        <div class="form-group">
-            <input type="date"
-                    ng-model="dateString"
-                    ng-change="date2carrington()"
-                    placeholder="Date String"
-                    required>
+            <div class="form-group">
+                <label for="numRotations">Carrington Rotations</label>
+                <input    type="number"
+                          ng-model="rotations"
+                          ng-change="carrington2date()"
+                          placeholder="Carrington Rotations"
+                          min="0"
+                          max="999999"
+                          class="form-control input-lg"
+                          required>
+            </div>
+            <div class="form-group">
+                <label for="dateInput">UTC Date</label>
+                <input type="date"
+                        ng-model="dateString"
+                        ng-change="date2carrington()"
+                        placeholder="Date String"
+                        class="form-control input-lg"
+                        required>
+            </div>
         </div>
         <h1>ROTATIONS: {{rotations}}</h1>
         <h1>DATE: {{dateString | date: 'MM-dd-yyyy' }}</h1>
