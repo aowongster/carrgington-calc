@@ -43,23 +43,26 @@
 <script>
     var app = angular.module('carringtonCalc', []);
     app.controller('CalcCtrl',['$scope', function($scope) {
-        var crDays = 27.2753;
+
+        var CRDAYS = 27.2753;               // Carrington Rotation definition
+        var SECS = 1000 * 60 * 60 *24;      // TS conversion to days
+        var SDATE = "October 14, 1853";     // When CR Began
+        var PRECISION = 4;                  // # of decimal places
         $scope.rotations = 0;
-        $scope.dateString = new Date("October 14, 1853");;
+        $scope.dateString = new Date(SDATE);
 
         $scope.carrington2date = function() {
-            var days = crDays * $scope.rotations;
-            var startDate = new Date("October 14, 1853");
+            var startDate = new Date(SDATE);
+            var days = CRDAYS * $scope.rotations;
             $scope.dateString = new Date(startDate.setUTCDate(startDate.getUTCDate() + days));
 
         };
 
         $scope.date2carrington = function(){
-            var startingDate = new Date("October 14, 1853");
-            var date = $scope.dateString;
-            var days = (date.getTime() - startingDate.getTime()) / 1000 / 60 / 60 / 24;
-            var crNum = days / crDays;
-            $scope.rotations = crNum;
+            var startDate = new Date(SDATE);
+            var days = ($scope.dateString.getTime() - startDate.getTime()) / SECS;
+            var crNum = days / CRDAYS;
+            $scope.rotations = crNum.toFixed(PRECISION);
         };
     }]);
 </script>
