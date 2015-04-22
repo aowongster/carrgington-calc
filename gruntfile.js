@@ -1,6 +1,11 @@
 module.exports = function(grunt) {
     'use strict';
 
+    var _js = {
+        app: ['app/js/*.js'],
+        grunt: ['gruntfile.js']
+    };
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         uglify: {
@@ -9,12 +14,12 @@ module.exports = function(grunt) {
                 mangle: true
             },
             build: {
-                src: 'app/js/*.js',
+                src: _js.app,
                 dest: 'build/<%= pkg.name %>.min.js'
             }
         },
         jshint: {
-            all: ['gruntfile.js', 'src/*.js']
+            all: _js.app.concat(_js.grunt)
         },
         karma: {
             unit: {
@@ -24,6 +29,12 @@ module.exports = function(grunt) {
             watch: {
                 configFile: 'test/karma.conf.js'
             }
+        },
+        watch: {
+            all: {
+                files: _js.app.concat(_js.grunt),
+                tasks: ['jshint']
+            }
         }
     });
 
@@ -31,6 +42,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-shell');
 
