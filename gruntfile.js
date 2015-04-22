@@ -15,6 +15,15 @@ module.exports = function(grunt) {
         },
         jshint: {
             all: ['gruntfile.js', 'src/*.js']
+        },
+        karma: {
+            unit: {
+                configFile: 'test/karma.conf.js',
+                singleRun: true
+            },
+            watch: {
+                configFile: 'test/karma.conf.js'
+            }
         }
     });
 
@@ -28,7 +37,8 @@ module.exports = function(grunt) {
     // registering tasks the hard way
     grunt.registerTask('build',[
         'jshint',
-        'uglify'
+        'uglify',
+        'karma:unit'
     ]);
 
     grunt.registerTask('travis-ci',['build']);
