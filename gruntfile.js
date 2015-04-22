@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 mangle: true
             },
             build: {
-                src: 'src/*.js',
+                src: 'app/js/*.js',
                 dest: 'build/<%= pkg.name %>.min.js'
             }
         },
