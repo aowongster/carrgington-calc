@@ -22,12 +22,14 @@ module.exports = function(grunt) {
             all: _js.app.concat(_js.grunt)
         },
         karma: {
-            unit: {
-                configFile: 'test/karma.conf.js',
-                singleRun: true
-            },
-            watch: {
+            options: {
                 configFile: 'test/karma.conf.js'
+            },
+            continuous: {
+                singleRun: true,
+                browsers: ['PhantomJS']
+            },
+            live: {
             }
         },
         watch: {
@@ -50,7 +52,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build',[
         'jshint',
         'uglify',
-        'karma:unit'
+        'karma:continuous'
     ]);
 
     grunt.registerTask('travis-ci',['build']);
