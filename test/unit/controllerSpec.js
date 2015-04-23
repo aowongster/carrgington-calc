@@ -16,6 +16,7 @@ describe('Carrington Controllers', function(){
         it('dummy should be true', function() {
             expect(true);
         });
+
         it('should set the default rotations to 0', function(){
             expect(scope.rotations).toBe(0);
         });
