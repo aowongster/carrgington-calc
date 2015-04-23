@@ -39,7 +39,11 @@ module.exports = function(grunt) {
                 dryRun: true,
                 force: true,
                 recursive: true
+            },
+            live: {
+                dryRun: false
             }
+
         },
         watch: {
             all: {
@@ -65,7 +69,10 @@ module.exports = function(grunt) {
         'karma:continuous'
     ]);
 
-    grunt.registerTask('travis-ci',['build']);
+    grunt.registerTask('travis-ci',[
+        'build',
+        'coveralls:live'
+    ]);
 
     // default
     grunt.registerTask('default', ['build']);
