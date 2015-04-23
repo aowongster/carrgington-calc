@@ -35,7 +35,7 @@ module.exports = function(grunt) {
         watch: {
             all: {
                 files: _js.app.concat(_js.grunt),
-                tasks: ['jshint']
+                tasks: ['jshint', 'karma:continuous']
             }
         }
     });
