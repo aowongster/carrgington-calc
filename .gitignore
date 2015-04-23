@@ -41,3 +41,7 @@ Thumbs.db
 # Node #
 ########
 node_modules/*
+
+# Coveralls #
+#############
+coverage/*

@@ -32,6 +32,15 @@ module.exports = function(grunt) {
             live: {
             }
         },
+        coveralls: {
+            options: {
+                debug: true,
+                coverageDir: 'coverage',
+                dryRun: true,
+                force: true,
+                recursive: true
+            }
+        },
         watch: {
             all: {
                 files: _js.app.concat(_js.grunt),
@@ -46,6 +55,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-karma-coveralls');
     grunt.loadNpmTasks('grunt-shell');
 
     // registering tasks the hard way
