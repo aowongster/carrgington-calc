@@ -46,10 +46,6 @@ module.exports = function(config) {
         dir: 'coverage/'
     },
 
-    plugins: [
-        'karma-coverage'
-    ],
-
     // web server port
     port: 9876,
 

@@ -34,16 +34,11 @@ module.exports = function(grunt) {
         },
         coveralls: {
             options: {
-                debug: true,
-                coverageDir: 'coverage',
-                dryRun: true,
-                force: true,
-                recursive: true
+                force: true
             },
-            live: {
-                dryRun: false
+            app: {
+                src: 'coverage/**/lcov.info'
             }
-
         },
         watch: {
             all: {
@@ -59,7 +54,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-karma-coveralls');
+    grunt.loadNpmTasks('grunt-coveralls');
+    // grunt.loadNpmTasks('grunt-karma-coveralls');
     grunt.loadNpmTasks('grunt-shell');
 
     // registering tasks the hard way
@@ -71,7 +67,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('travis-ci',[
         'build',
-        'coveralls:live'
+        'coveralls'
     ]);
 
     // default
