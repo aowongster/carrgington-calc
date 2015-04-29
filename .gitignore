@@ -45,3 +45,4 @@ node_modules/*
 # Coveralls #
 #############
 coverage/*
+.coveralls.yml
