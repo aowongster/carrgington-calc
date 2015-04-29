@@ -43,8 +43,8 @@
                         required>
             </div>
         </div>
-        <h1>ROTATIONS: {{rotations}}</h1>
-        <h1>DATE: {{dateString | date: 'MM-dd-yyyy' }}</h1>
+        <h1>ROTATIONS: {{rotations ? rotations : 0}}</h1>
+        <h1>DATE: {{ dateString | date : 'MM-dd-yyyy' }}</h1>
     </div>
 </div>
 
