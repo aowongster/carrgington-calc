@@ -65,6 +65,7 @@ module.exports = function(grunt) {
         'karma:continuous'
     ]);
 
+    // updates coverage badge when run on travis
     grunt.registerTask('travis-ci',[
         'build',
         'coveralls'
