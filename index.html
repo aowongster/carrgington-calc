@@ -13,15 +13,6 @@
     <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">-->
     <!--<script src="bower_components/angular/angular.js"></script>-->
     <!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
-
-    <script src="build/carringtonCalc.min.js"></script>
-
-    <style>
-        .col-centered {
-            float: none;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 <body>
 <div class="container">
@@ -30,7 +21,7 @@
         <div class="form-group">
             <div class="form-group">
                 <label for="numRotations">Carrington Rotations</label>
-                <input    type="text" step=".0001"
+                <input    type="number" step="1"
                           ng-model="rotations"
                           ng-change="carrington2date()"
                           placeholder="Carrington Rotations"
@@ -54,7 +45,8 @@
         <h1>DATE: {{dateString | date: 'MM-dd-yyyy' }}</h1>
     </div>
 </div>
-</body>
+
+<script src="build/carringtonCalc.min.js"></script>
 
 </body>
 </html>
