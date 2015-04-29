@@ -32,13 +32,13 @@ describe('Carrington Controllers', function(){
         it('tests the calculation of carrington rotation date given a number', function() {
           $scope.rotations = 1;
           $scope.carrington2date();
-          expect($scope.dateString).toEqual(new Date("Wed Nov 09 1853 23:00:00 GMT-0800 (PST)"));
+          expect($scope.dateString).toBeCloseTo(new Date("Wed Nov 09 1853 23:00:00 GMT-0800 (PST)"));
         });
 
         it('tests the date calculation to rotations', function(){
           $scope.dateString = new Date("January 23, 1987");
           $scope.date2carrington();
-          expect($scope.rotations).toBe(1784.6932);
+          expect($scope.rotations).toBeCloseTo(1784.6932);
         });
 
     });

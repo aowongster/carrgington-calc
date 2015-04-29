@@ -28,5 +28,4 @@
                 $scope.rotations = parseFloat(crNum.toFixed(PRECISION));
             };
     }]);
-
 })();
