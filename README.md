@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/aowongster/aowongster.github.io.svg?branch=master)](https://travis-ci.org/aowongster/aowongster.github.io)
+[![Dependency Status](https://david-dm.org/aowongster/aowongster.github.io.svg)
 [![Coverage Status](https://coveralls.io/repos/aowongster/aowongster.github.io/badge.svg)](https://coveralls.io/r/aowongster/aowongster.github.io)
+
 # Carrington Calculator
 
 Do those pesky Carrington Calculations on the fly!
