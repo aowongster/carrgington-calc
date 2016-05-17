@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/aowongster/aowongster.github.io.svg?branch=master)](https://travis-ci.org/aowongster/aowongster.github.io)
-[![Dependency Status](https://david-dm.org/aowongster/aowongster.github.io.svg)
-[![Coverage Status](https://coveralls.io/repos/aowongster/aowongster.github.io/badge.svg)](https://coveralls.io/r/aowongster/aowongster.github.io)
+[![Build Status](https://travis-ci.org/aowongster/carrington-calc.svg?branch=master)](https://travis-ci.org/aowongster/carrington-calc)
+[![Dependency Status](https://david-dm.org/aowongster/carrington-calc.svg)
+[![Coverage Status](https://coveralls.io/repos/aowongster/carrington-calc/badge.svg)](https://coveralls.io/r/aowongster/carrington-calc)
 
 # Carrington Calculator
 
