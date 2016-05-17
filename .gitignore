@@ -46,3 +46,7 @@ node_modules/*
 #############
 coverage/*
 .coveralls.yml
+
+# Editor #
+##########
+.idea/*

@@ -5,10 +5,11 @@
 # Carrington Calculator
 
 Do those pesky Carrington Calculations on the fly!
+See [solar rotations](https://en.wikipedia.org/wiki/Solar_rotation) on wikipedia.
 
 ## Get these node tools
   npm install -g grunt-cli bower istanbul karma
-  
+
 ## Built With
 
 * [Node NPM][0] - node package manager
