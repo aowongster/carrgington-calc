@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aowongster/aowongster.github.io.git"
+    "url": "https://github.com/aowongster/carrington-calc.git"
   },
   "keywords": [
     "science",
@@ -21,9 +21,9 @@
   "author": "Alistair Wong",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aowongster/aowongster.github.io/issues"
+    "url": "https://github.com/aowongster/carrington-calc/issues"
   },
-  "homepage": "https://github.com/aowongster/aowongster.github.io",
+  "homepage": "https://github.com/aowongster/carrington-calc",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-csslint": "^0.4.0",
